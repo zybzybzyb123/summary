@@ -1,5 +1,8 @@
-package baseSort;
+package main.baseSort;
 
+/**
+ * 快速排序,左闭右开区间[)
+ */
 public class QuickSort {
     private static void swap(int[] nums, int i, int j){
         //同意位置不交换
@@ -53,7 +56,5 @@ public class QuickSort {
         quickSort2(nums, left, i);
         quickSort2(nums, i + 1, right);
     }
-    public static void main(String[] args) {
-        System.out.println("this is quick sort");
-    }
+
 }

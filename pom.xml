@@ -8,5 +8,10 @@
     <artifactId>summary</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--<spring-dependencies.version>1.5.9.RELEASE</spring-dependencies.version>-->
+        <!--<maven-processor-plugin.version>2.2.4</maven-processor-plugin.version>-->
+        <java.version>1.8</java.version>
+    </properties>
 </project>
