@@ -38,6 +38,7 @@ public class HeapSort {
         for(int i = (sz - 1) / 2; i >= 0; i--){
             adjustHeap(nums, i, sz);
         }
+        //交换堆顶和堆尾节点，重新从堆顶调整堆
         for(int i = sz - 1; i > 0 ;i--){
             swap(nums, 0, i);
             adjustHeap(nums, 0, i);

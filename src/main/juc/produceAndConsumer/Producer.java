@@ -1,4 +1,4 @@
-package main.multiThread.produceAndConsumer;
+package main.juc.produceAndConsumer;
 
 import java.util.concurrent.BlockingQueue;
 
