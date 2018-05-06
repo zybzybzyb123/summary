@@ -1,4 +1,4 @@
-package main.juc.CyclicBarrier;
+package main.juc.cyclicBarrier;
 
 public class ThreadB implements Runnable {
     public volatile int val;

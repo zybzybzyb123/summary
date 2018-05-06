@@ -1,4 +1,4 @@
-package main.juc.CyclicBarrier;
+package main.juc.cyclicBarrier;
 
 
 public class ThreadA implements Runnable {

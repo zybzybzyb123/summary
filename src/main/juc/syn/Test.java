@@ -1,40 +1,35 @@
 package main.juc.syn;
 
-public class Test{
-    private static int val = 0;
+public class Test {
+    private int cnt = 10;
+    private final Object lock = new Object();
+    private int val = 1;
+    private int threadNums = 3;
+    private  class Print extends Thread{
+        private final int offset;
+        public Print(int offset){
+            this.offset = offset;
+        }
+        public void run(){
+            for (int i = 0; i < cnt; i++) {
+                synchronized (lock){
+                    while(val % threadNums != offset){
+                        try{
+                            lock.wait();
+                        } catch (InterruptedException e){
+                            e.printStackTrace();
+                        }
+                    }
+                    System.out.println(val++);
+                    lock.notifyAll();
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
-        Object object = new Object();
-        int n = 9;
-        new Thread(() -> {
-            while(val < n){
-                if(val % 3 == 0){
-                    synchronized (object){
-                        val++;
-                        System.out.println("A");
-                    }
-                }
-            }
-        }).start();
-
-        new Thread(() -> {
-            while(val < n){
-                if(val % 3 == 1){
-                    synchronized (object){
-                        val++;
-                        System.out.println("B");
-                    }
-                }
-            }
-        }).start();
-        new Thread(() -> {
-            while(val < n){
-                if(val % 3 == 2){
-                    synchronized (object){
-                        val++;
-                        System.out.println("C");
-                    }
-                }
-            }
-        }).start();
+        Test test = new Test();
+        for(int i = 1; i <= test.threadNums; i++){
+            test.new Print(i % test.threadNums).start();
+        }
     }
 }
