@@ -1,6 +1,6 @@
-package main.patterns.proxy.dynamicProxy;
+package main.patterns.proxy.dynamicProxy.cglibAOP;
 
-public class RealSubject implements Subject{
+public class RealSubject implements Subject {
 
     @Override
     public void request(){
