@@ -1,4 +1,4 @@
-package main.juc.produceAndConsumer;
+package main.juc.paterns.produceAndConsumer;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
