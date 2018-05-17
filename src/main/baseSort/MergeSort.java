@@ -5,6 +5,7 @@ package main.baseSort;
  */
 public class MergeSort {
     private static int[] temp = new int[100];
+    //递归版
     public static void mergeSort(int[] nums, int left, int right){
         //只有一个数，直接返回
         if(left >= right - 1) return;
@@ -22,5 +23,13 @@ public class MergeSort {
         for(int i = left; i < right; i++){
             nums[i] = temp[i];
         }
+    }
+    //非递归版
+    public static void mergeSortLoop(int[] nums, int left, int right){
+
+    }
+
+    public static void main(String[] args) {
+
     }
 }
