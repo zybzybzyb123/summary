@@ -17,11 +17,11 @@ public class Test {
      */
     private static void QuickSortTest(int[] nums){
         System.out.println("QuickSort Test");
-//        init(nums);
-//        System.out.println(Arrays.toString(nums));
-//        QuickSort.quickSort1(nums, 0, nums.length);
-//        System.out.println(Arrays.toString(nums));
-//        System.out.println();
+        init(nums);
+        System.out.println(Arrays.toString(nums));
+        QuickSort.quickSort1(nums, 0, nums.length);
+        System.out.println(Arrays.toString(nums));
+        System.out.println();
         init(nums);
         System.out.println(Arrays.toString(nums));
         QuickSort.quickSort2(nums, 0, nums.length);

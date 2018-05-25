@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class QuickSort {
     private static void swap(int[] nums, int i, int j){
-        //同意位置不交换
+        //同一位置不交换
         if(i == j) return;
         int temp = nums[i];
         nums[i] = nums[j];

@@ -7,7 +7,7 @@ public class MyThread implements Runnable {
     private Lock lock;
     private Condition condition;
     private int offset;
-    //state必须是共有变量
+    //state必须是公有变量
     private static int state = 0;
 
     public MyThread(Lock lock, Condition condition, int offset) {
