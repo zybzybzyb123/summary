@@ -8,7 +8,7 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 /**
- * nio 客户端 Created by david.zhang
+ * io 客户端 Created by david.zhang
  */
 public class Client {
     // 通道管理器
@@ -39,7 +39,7 @@ public class Client {
      * @throws IOException
      */
     public void listen() throws IOException {
-        System.out.println("nio client liesten start.");
+        System.out.println("io client liesten start.");
         // 轮询访问selector
         while (true) {
             // 当注册的事件到达时，方法返回；否则,该方法会一直阻塞

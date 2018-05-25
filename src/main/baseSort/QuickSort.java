@@ -1,5 +1,7 @@
 package main.baseSort;
 
+import java.util.Arrays;
+
 /**
  * 快速排序,左闭右开区间[)
  */
@@ -43,6 +45,7 @@ public class QuickSort {
         int temp = nums[left];
         int i = left, j = right - 1;
         while(i < j){
+            //扫描时必须有一个取等号，不然遇到和基准相同的值时会陷入死循环
             while(i < j && nums[j] >= temp){
                 j--;
             }
@@ -56,5 +59,6 @@ public class QuickSort {
         quickSort2(nums, left, i);
         quickSort2(nums, i + 1, right);
     }
+
 
 }

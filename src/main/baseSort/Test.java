@@ -16,12 +16,12 @@ public class Test {
      * @param nums
      */
     private static void QuickSortTest(int[] nums){
-        System.out.println("QuickSort PrintABC1");
-        init(nums);
-        System.out.println(Arrays.toString(nums));
-        QuickSort.quickSort1(nums, 0, nums.length);
-        System.out.println(Arrays.toString(nums));
-        System.out.println();
+        System.out.println("QuickSort Test");
+//        init(nums);
+//        System.out.println(Arrays.toString(nums));
+//        QuickSort.quickSort1(nums, 0, nums.length);
+//        System.out.println(Arrays.toString(nums));
+//        System.out.println();
         init(nums);
         System.out.println(Arrays.toString(nums));
         QuickSort.quickSort2(nums, 0, nums.length);
@@ -32,7 +32,7 @@ public class Test {
      * @param nums
      */
     private static void MergeSortTest(int[] nums){
-        System.out.println("MergeSort PrintABC1");
+        System.out.println("MergeSort Test");
         init(nums);
         System.out.println(Arrays.toString(nums));
         MergeSort.mergeSort(nums, 0, nums.length);
@@ -44,7 +44,7 @@ public class Test {
      * @param nums
      */
     private static void HeapSortTest(int[] nums){
-        System.out.println("HeapSort PrintABC1");
+        System.out.println("HeapSort Test");
         init(nums);
         System.out.println(Arrays.toString(nums));
         HeapSort.heapSort(nums);
@@ -55,7 +55,7 @@ public class Test {
      * @param nums
      */
     private static void InsertSortTest(int[] nums){
-        System.out.println("InsertSort PrintABC1");
+        System.out.println("InsertSort Test");
         init(nums);
         System.out.println(Arrays.toString(nums));
         InsertSort.insertSort(nums);
@@ -67,7 +67,7 @@ public class Test {
      * @param nums
      */
     private static void BubbleSortTest(int[] nums){
-        System.out.println("BubbleSort PrintABC1");
+        System.out.println("BubbleSort Test");
         init(nums);
         System.out.println(Arrays.toString(nums));
         BubbleSort.bubbleSort(nums);
@@ -79,7 +79,7 @@ public class Test {
      * @param nums
      */
     private static void SelectSortTest(int[] nums){
-        System.out.println("SelectSort PrintABC1");
+        System.out.println("SelectSort Test");
         init(nums);
         System.out.println(Arrays.toString(nums));
         SelectSort.selectSort(nums);
@@ -87,9 +87,9 @@ public class Test {
     }
     public static void main(String[] args) {
         int[] nums = new int[len];
-//        QuickSortTest(nums);
+        QuickSortTest(nums);
 //        MergeSortTest(nums);
-        HeapSortTest(nums);
+//        HeapSortTest(nums);
 //        InsertSortTest(nums);
 //        BubbleSortTest(nums);
 //        SelectSortTest(nums);

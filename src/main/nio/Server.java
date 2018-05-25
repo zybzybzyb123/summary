@@ -9,7 +9,7 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 /**
- * nio 服务端 Created by david.zhang
+ * io 服务端 Created by david.zhang
  */
 public class Server {
     // 通道管理器
@@ -39,7 +39,7 @@ public class Server {
      * @throws IOException
      */
     public void listen() throws IOException {
-        System.out.println("nio server listen start.");
+        System.out.println("io server listen start.");
         // 轮询访问selector
         while (true) {
             // 当注册的事件到达时，方法返回；否则,该方法会一直阻塞
