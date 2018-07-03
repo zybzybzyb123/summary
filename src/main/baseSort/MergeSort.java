@@ -1,5 +1,8 @@
 package main.baseSort;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /**
  * 归并排序区间左闭右开[)
  */
@@ -14,7 +17,7 @@ public class MergeSort {
         mergeSort(nums, mid, right);
         int t = left;
         while(p < mid || q < right){
-            if(q >= right || nums[p] < nums[q]){
+            if(q >= right || (p < mid && nums[p] < nums[q])){
                 temp[t++] = nums[p++];
             } else{
                 temp[t++] = nums[q++];
@@ -30,6 +33,15 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-
+        int[] nums = new int[10];
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            nums[i] = random.nextInt(10);
+        }
+        System.out.println("排序前:");
+        System.out.println(Arrays.toString(nums));
+        mergeSort(nums, 0, nums.length);
+        System.out.println("排序后:");
+        System.out.println(Arrays.toString(nums));
     }
 }
