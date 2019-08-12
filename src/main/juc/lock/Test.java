@@ -8,7 +8,7 @@ public class Test {
     public static void main(String[] args) {
         Lock lock = new ReentrantLock();
         Condition condition = lock.newCondition();
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++){
             new Thread(new MyThread(lock, condition, i)).start();
         }
     }

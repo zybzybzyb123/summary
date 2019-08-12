@@ -1,7 +1,5 @@
 package main.juc.exchanger;
 
-import org.omg.CORBA.INITIALIZE;
-
 import java.util.concurrent.Exchanger;
 
 public class MyThread implements Runnable{

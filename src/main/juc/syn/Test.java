@@ -13,7 +13,7 @@ public class Test {
         public void run(){
             for (int i = 0; i < cnt; i++) {
                 synchronized (lock){
-                    while(val % threadNums != offset){
+                    while (val % threadNums != offset){
                         try{
                             lock.wait();
                         } catch (InterruptedException e){
@@ -28,7 +28,7 @@ public class Test {
     }
     public static void main(String[] args) {
         Test test = new Test();
-        for(int i = 1; i <= test.threadNums; i++){
+        for (int i = 1; i <= test.threadNums; i++){
             test.new Print(i % test.threadNums).start();
         }
     }

@@ -9,7 +9,7 @@ public class Producer implements Runnable{
     }
     public void run(){
         try{
-            for(int i = 1; i <= 10; i++){
+            for (int i = 1; i <= 10; i++){
                 Thread.sleep(100);
                 queue.put(i);
                 System.out.println("生产者: " + i);

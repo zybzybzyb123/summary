@@ -25,7 +25,7 @@ public class PrintNums {
 
         @Override
         public void run() {
-            for(int i = 0; i < limit; i++) {
+            for (int i = 0; i < limit; i++) {
                 synchronized (object) {
                     while (state % cnt != offset) {
                         try {
@@ -41,7 +41,7 @@ public class PrintNums {
                 }
             }
             //单独处理数组长度不一样的情况，这种情况下变为单线程
-            for(int i = limit; i < nums.length; i++){
+            for (int i = limit; i < nums.length; i++){
                 System.out.println(state++ + " : " + nums[i]);
             }
         }
@@ -53,7 +53,7 @@ public class PrintNums {
         nums[0] = new int[]{1,3,5,7,9,11,13,15};
         nums[1] = new int[]{2,4,6,8,10};
         limit = Math.min(nums[0].length, nums[1].length);
-        for(int i = 0; i < cnt; i++){
+        for (int i = 0; i < cnt; i++){
             printNums.new MyThread(i, nums[i]).start();
         }
     }

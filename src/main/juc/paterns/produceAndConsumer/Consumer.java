@@ -10,7 +10,7 @@ public class Consumer implements Runnable{
     public void run(){
         int val;
         try{
-            while((val = queue.take()) != -1){
+            while ((val = queue.take()) != -1){
                 Thread.sleep(100);
                 System.out.println("消费者: " + val + " " + val * val);
             }

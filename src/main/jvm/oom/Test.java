@@ -11,7 +11,7 @@ public class Test {
     private void createObject(){
         int i = 0;
         try{
-            for(i = 0; i < 30; i++){
+            for (i = 0; i < 30; i++){
                 list.add(new BigObject());
             }
         } catch (Throwable e){

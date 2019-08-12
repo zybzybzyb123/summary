@@ -10,8 +10,8 @@ public class PrintABC1 {
         Object object = new Object();
         int n = 9;
         new Thread(() -> {
-            while(val < n){
-                if(val % 3 == 0){
+            while (val < n){
+                if (val % 3 == 0){
                     synchronized (object){
                         val++;
                         System.out.println("A");
@@ -21,8 +21,8 @@ public class PrintABC1 {
         }).start();
 
         new Thread(() -> {
-            while(val < n){
-                if(val % 3 == 1){
+            while (val < n){
+                if (val % 3 == 1){
                     synchronized (object){
                         val++;
                         System.out.println("B");
@@ -31,8 +31,8 @@ public class PrintABC1 {
             }
         }).start();
         new Thread(() -> {
-            while(val < n){
-                if(val % 3 == 2){
+            while (val < n){
+                if (val % 3 == 2){
                     synchronized (object){
                         val++;
                         System.out.println("C");

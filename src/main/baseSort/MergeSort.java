@@ -16,14 +16,14 @@ public class MergeSort {
         mergeSort(nums, left, mid);
         mergeSort(nums, mid, right);
         int t = left;
-        while(p < mid || q < right){
-            if(q >= right || (p < mid && nums[p] < nums[q])){
+        while (p < mid || q < right){
+            if (q >= right || (p < mid && nums[p] < nums[q])){
                 temp[t++] = nums[p++];
             } else{
                 temp[t++] = nums[q++];
             }
         }
-        for(int i = left; i < right; i++){
+        for (int i = left; i < right; i++){
             nums[i] = temp[i];
         }
     }

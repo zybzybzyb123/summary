@@ -17,7 +17,7 @@ public class MyThread implements Runnable {
     }
 
     public void run(){
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++){
             lock.lock();
             try{
                 while (state % 3 != offset){
