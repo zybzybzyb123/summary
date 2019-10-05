@@ -1,4 +1,4 @@
-package main.baseSort;
+package baseSort;
 
 import java.util.Arrays;
 import java.util.Random;

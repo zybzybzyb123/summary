@@ -1,4 +1,4 @@
-package main.juc.threadlocal;
+package juc.threadlocal;
 
 public class MyThread extends Thread{
 

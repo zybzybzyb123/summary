@@ -1,4 +1,4 @@
-package main.juc.syn;
+package juc.syn;
 
 public class PrintABC2 {
     private int state = 0; // 线程共有，判断所有的打印状态

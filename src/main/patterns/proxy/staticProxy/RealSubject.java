@@ -1,4 +1,4 @@
-package main.patterns.proxy.staticProxy;
+package patterns.proxy.staticProxy;
 
 public class RealSubject implements Subject{
 

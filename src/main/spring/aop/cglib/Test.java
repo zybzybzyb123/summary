@@ -1,4 +1,4 @@
-package main.spring.aop.cglib;
+package spring.aop.cglib;
 
 public class Test {
     public static void main(String[] args) {

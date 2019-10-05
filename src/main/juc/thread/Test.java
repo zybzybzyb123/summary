@@ -1,4 +1,4 @@
-package main.juc.thread;
+package juc.thread;
 
 
 public class Test {

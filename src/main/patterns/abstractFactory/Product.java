@@ -1,4 +1,4 @@
-package main.patterns.abstractFactory;
+package patterns.abstractFactory;
 
 class ContainerProductA extends ContainerProduct{
     public ContainerProductA(){

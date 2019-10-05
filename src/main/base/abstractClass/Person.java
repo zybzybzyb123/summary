@@ -1,4 +1,4 @@
-package main.base.abstractClass;
+package base.abstractClass;
 
 /**
  *

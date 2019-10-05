@@ -1,0 +1,27 @@
+@startuml
+title 观察者模式
+
+interface Subject {
+    + registerObserver()
+    + removeObserver()
+    + notifyObserver()
+}
+
+class ConcreteSubject {
+    + registerObserver()
+    + removeObserver()
+    + notifyObserver()
+}
+
+interface Observer {
+    + update()
+}
+
+class ConcreteObserver {
+    + update()
+}
+
+Subject <|.. ConcreteSubject
+Observer <|.. ConcreteObserver
+'Observer <-- Subject
+@enduml

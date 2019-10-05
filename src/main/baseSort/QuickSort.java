@@ -1,4 +1,4 @@
-package main.baseSort;
+package baseSort;
 
 /**
  * 快速排序,左闭右开区间[)

@@ -1,4 +1,4 @@
-package main.patterns.proxy.staticProxy;
+package patterns.proxy.staticProxy;
 
 public class Test {
     public static void main(String[] args) {

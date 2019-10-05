@@ -1,4 +1,4 @@
-package main.juc.syn;
+package juc.syn;
 
 public class Test {
     private int cnt = 10;

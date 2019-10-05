@@ -1,4 +1,4 @@
-package main.juc.syn;
+package juc.syn;
 
 /**
  * 两个线程轮流打印数组的值

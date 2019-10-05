@@ -1,4 +1,4 @@
-package main.juc.syn;
+package juc.syn;
 
 /**
  *

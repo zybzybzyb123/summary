@@ -1,4 +1,4 @@
-package main.patterns.proxy.dynamicProxy.jdkAOP;
+package patterns.proxy.dynamicProxy.jdkAOP;
 
 public class RealSubject implements Subject{
 

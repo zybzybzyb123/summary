@@ -1,4 +1,4 @@
-package main.baseSort;
+package baseSort;
 
 /**
  * 堆排序，左闭右开[)

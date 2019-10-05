@@ -1,4 +1,4 @@
-package main.patterns.proxy.dynamicProxy.cglibAOP;
+package patterns.proxy.dynamicProxy.cglibAOP;
 
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;

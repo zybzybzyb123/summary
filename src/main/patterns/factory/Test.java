@@ -1,4 +1,4 @@
-package main.patterns.factory;
+package patterns.factory;
 
 interface Fruit {
     void say();

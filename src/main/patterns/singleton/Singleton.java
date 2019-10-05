@@ -1,4 +1,4 @@
-package main.patterns.singleton;
+package patterns.singleton;
 
 public class Singleton {
     private Singleton(){

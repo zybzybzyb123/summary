@@ -1,4 +1,4 @@
-package main.baseSort;
+package baseSort;
 
 
 public class SelectSort {

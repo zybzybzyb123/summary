@@ -1,4 +1,4 @@
-package main.patterns.proxy.staticProxy;
+package patterns.proxy.staticProxy;
 
 public class ProxySubject implements Subject{
     private Subject subject;

@@ -1,4 +1,4 @@
-package main.algorithm.interview;
+package algorithm.interview;
 
 //大写字母移动到小写字母后面
 
