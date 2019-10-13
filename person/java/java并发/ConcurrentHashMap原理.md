@@ -1,8 +1,10 @@
 ConcurrentHashMap数据结构和HashMap很类似
 key和value不能为null
 内部保存一个sizectl记录各个线程的状态
-sizectl为0时，表示当前表为null
-通过cas把sizectl置为-1,其他线程看到sizectl为-1时就进行自旋，
+sizectl为0时,表示当前表为null
+通过cas把sizectl置为-1,其他线程看到sizectl为-1时就进行自旋,
 保证初始化表时只有一个线程执行
-在put操作时，当当前桶的Node节点为null时通过cas设置当前Node
-如果当前Node已经存在，则对当前Node加synchronized锁，进行put
+在put操作时,当当前桶的Node节点为null时通过cas设置当前Node
+如果当前Node已经存在,则对当前Node加synchronized锁,进行put
+
+多线程并发辅助扩容

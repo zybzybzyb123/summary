@@ -22,7 +22,7 @@ public class Test {
         for(int i = 0; i < 3; i++){
             test.new MyThread(i, count).start();
         }
-        //主线程阻塞，等待调用countDown
+        //主线程阻塞,等待调用countDown
         count.await();
         System.out.println("main方法执行了");
     }

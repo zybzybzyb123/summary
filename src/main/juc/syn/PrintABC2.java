@@ -1,7 +1,7 @@
 package juc.syn;
 
 public class PrintABC2 {
-    private int state = 0; // 线程共有，判断所有的打印状态
+    private int state = 0; // 线程共有,判断所有的打印状态
     private Object object = new Object();
     private  class MyThread extends Thread {
         int offset; // 0：打印A；1：打印B；2：打印C
@@ -20,7 +20,7 @@ public class PrintABC2 {
                             e.printStackTrace();
                         }
                     }
-                    System.out.println((char) ('A' + offset)); // 执行到这里，表明满足条件，打印
+                    System.out.println((char) ('A' + offset)); // 执行到这里,表明满足条件,打印
                     state++;
                     object.notifyAll(); // 调用notifyAll方法
                 }

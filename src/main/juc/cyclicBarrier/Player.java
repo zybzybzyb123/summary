@@ -15,7 +15,7 @@ public class Player implements Runnable{
     @Override
     public void run(){
         try{
-            System.out.format("玩家 %d 已准备，等待其他玩家准备\n", id);
+            System.out.format("玩家 %d 已准备,等待其他玩家准备\n", id);
             cyclicBarrier.await();
             System.out.format("玩家 %d 已加入游戏\n", id);
         } catch (InterruptedException | BrokenBarrierException e){

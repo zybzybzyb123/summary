@@ -1,0 +1,3 @@
+synchonized 和 Lock的区别
+
+synchonized虚拟机层面的锁

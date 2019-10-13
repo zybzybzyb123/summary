@@ -7,6 +7,7 @@ public class Consumer implements Runnable{
     public Consumer(BlockingQueue<Integer> queue){
         this.queue = queue;
     }
+    @Override
     public void run(){
         int val;
         try{

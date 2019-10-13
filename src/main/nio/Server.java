@@ -9,13 +9,13 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 /**
- * io 服务端 Created by david.zhang
+ * zero
  */
 public class Server {
     // 通道管理器
     private Selector selector;
     /**
-     * 获得一个ServerSocket通道，并对该通道做一些初始化的工作
+     * 获得一个ServerSocket通道,并对该通道做一些初始化的工作
      *
      * @param port 绑定的端口号
      * @throws IOException
@@ -29,12 +29,12 @@ public class Server {
         serverChannel.socket().bind(new InetSocketAddress(port));
         // 获得一个通道管理器
         this.selector = Selector.open();
-        // 将通道管理器和该通道绑定，并为该通道注册SelectionKey.OP_ACCEPT事件,注册该事件后，
-        // 当该事件到达时，selector.select()会返回，如果该事件没到达selector.select()会一直阻塞。
+        // 将通道管理器和该通道绑定,并为该通道注册SelectionKey.OP_ACCEPT事件,注册该事件后,
+        // 当该事件到达时,selector.select()会返回,如果该事件没到达selector.select()会一直阻塞。
         serverChannel.register(selector, SelectionKey.OP_ACCEPT);
     }
     /**
-     * 采用轮询的方式监听selector上是否有需要处理的事件，如果有，则进行处理
+     * 采用轮询的方式监听selector上是否有需要处理的事件,如果有,则进行处理
      *
      * @throws IOException
      */
@@ -42,9 +42,9 @@ public class Server {
         System.out.println("io server listen start.");
         // 轮询访问selector
         while (true) {
-            // 当注册的事件到达时，方法返回；否则,该方法会一直阻塞
+            // 当注册的事件到达时,方法返回；否则,该方法会一直阻塞
             selector.select();
-            // 获得selector中选中的项的迭代器，选中的项为注册的事件
+            // 获得selector中选中的项的迭代器,选中的项为注册的事件
             Iterator<SelectionKey> it = selector.selectedKeys().iterator();
             while (it.hasNext()) {
                 SelectionKey key = it.next();
@@ -59,7 +59,7 @@ public class Server {
                     channel.configureBlocking(false);
                     // 在这里可以给客户端发送信息
                     channel.write(ByteBuffer.wrap(new String("服务器收到客户端连接请求.").getBytes()));
-                    // 在和客户端连接成功之后，为了可以接收到客户端的信息，需要给通道设置读的权限。
+                    // 在和客户端连接成功之后,为了可以接收到客户端的信息,需要给通道设置读的权限。
                     channel.register(selector, SelectionKey.OP_READ);
                     // 获得了可读事件
                 } else if (key.isReadable()) {
