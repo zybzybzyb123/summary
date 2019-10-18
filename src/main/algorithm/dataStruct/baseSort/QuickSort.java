@@ -19,6 +19,7 @@ public class QuickSort {
      */
     public static void quickSort1(int[] nums, int left, int right){
         if (left >= right - 1) return;
+        //选取最左元素作为标志元素
         int temp = nums[left];
         int i = left, j = left + 1;
         while (j < right){
