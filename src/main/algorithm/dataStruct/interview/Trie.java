@@ -2,25 +2,25 @@ package algorithm.dataStruct.interview;
 
 public class Trie {
 
-    private class TreeNode{
+    private class TrieNode {
         Boolean isLeaf = false;
-        public TreeNode[] nodes = new TreeNode[26];
+        public TrieNode[] nodes = new TrieNode[26];
     }
 
-    TreeNode root = null;
+    TrieNode root = null;
 
     /** Initialize your data structure here. */
     public Trie() {
-        root = new TreeNode();
+        root = new TrieNode();
     }
 
     /** Inserts a word into the trie. */
     public void insert(String word) {
-        TreeNode head = root;
+        TrieNode head = root;
         for(char ch : word.toCharArray()){
             int pos = ch - 'a';
             if(head.nodes[pos] == null){
-                head.nodes[pos] = new TreeNode();
+                head.nodes[pos] = new TrieNode();
             }
             head = head.nodes[pos];
         }
@@ -29,7 +29,7 @@ public class Trie {
 
     /** Returns if the word is in the trie. */
     public boolean search(String word) {
-        TreeNode head = root;
+        TrieNode head = root;
         for(char ch : word.toCharArray()){
             int pos = ch - 'a';
             if(head.nodes[pos] == null){
@@ -42,7 +42,7 @@ public class Trie {
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
     public boolean startsWith(String prefix) {
-        TreeNode head = root;
+        TrieNode head = root;
         for(char ch : prefix.toCharArray()){
             int pos = ch - 'a';
             if(head.nodes[pos] == null){
