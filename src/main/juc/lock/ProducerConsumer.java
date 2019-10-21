@@ -18,17 +18,17 @@ public class ProducerConsumer<T> {
 
     private int maxSize;
 
-    private Condition notfullCondition;
-
     private Condition fullCondition;
+
+    private Condition emptyCondition;
 
     public ProducerConsumer(int maxSize) {
         this.maxSize = maxSize;
         lock = new ReentrantLock();
         buffer = new LinkedList<>();
         this.maxSize = maxSize;
-        notfullCondition = lock.newCondition();
         fullCondition = lock.newCondition();
+        emptyCondition = lock.newCondition();
     }
 
     public void produce(T t) throws InterruptedException {
@@ -36,7 +36,7 @@ public class ProducerConsumer<T> {
         lock.lock();
         try {
             while (maxSize == buffer.size()) {
-                notfullCondition.await();
+                fullCondition.await();
                 System.out.println("工厂产能达到极限，不能继续进行生产了,停工一段时间");
             }
 
@@ -45,7 +45,7 @@ public class ProducerConsumer<T> {
 
             System.out.println("哈哈，我生产了" + t + "，通知消费者进行消费...");
             //通知消费者线程进行消费
-            fullCondition.signalAll();
+            emptyCondition.signalAll();
 
         } finally {
             lock.unlock();
@@ -60,14 +60,14 @@ public class ProducerConsumer<T> {
 
             while (buffer.size() == 0) {
                 System.out.println("工厂的产品已经消费完了，暂时不能剁手了");
-                fullCondition.await();
+                emptyCondition.await();
             }
 
             //开始消费
             T goods = buffer.poll();
             System.out.println("哈哈，我消费" + goods + "，通知工厂进行生产...");
             //通知生成者
-            notfullCondition.signalAll();
+            fullCondition.signalAll();
 
         } finally {
             lock.unlock();
