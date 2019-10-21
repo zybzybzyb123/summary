@@ -9,20 +9,17 @@ class BigObject{
 public class Test {
     List<BigObject> list = new ArrayList<>();
     private void createObject(){
-        int i = 0;
         try{
-            for (i = 0; i < 30; i++){
+            for (int i = 0; i < 300000; i++){
                 list.add(new BigObject());
             }
         } catch (Throwable e){
             e.printStackTrace();
-        } finally {
-            System.out.println(i);
         }
     }
     public static void main(String[] args) {
         Test test = new Test();
-        //test.createObject();
+        test.createObject();
         System.out.println("ok");
     }
 }

@@ -10,4 +10,3 @@
         put
         如果table
         先获取key的hash值,就是在表中的桶位置,如果桶为null,先new Node,
-    2. 
