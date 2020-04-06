@@ -3,7 +3,7 @@ package algorithm.dataStruct.interview;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LRUCache<K, V> {
+public class LRUCache<K, V> implements ICache<K, V> {
     
     private class Node {
         private K key;
@@ -20,10 +20,10 @@ public class LRUCache<K, V> {
 
     private Map<K, Node> lruCache;
     private Node head, tail;
-    private int curSize, maxSize;
+    private int size, capacity;
 
     private void addTail(Node node) {
-        curSize++;
+        size++;
         node.pre = tail.pre;
         tail.pre = node;
         node.next = tail;
@@ -31,7 +31,7 @@ public class LRUCache<K, V> {
     }
 
     private void removeNode (Node node) {
-        curSize--;
+        size--;
         node.pre.next = node.next;
         node.next.pre = node.pre;
         node.pre = null;
@@ -39,8 +39,8 @@ public class LRUCache<K, V> {
     }
 
     public LRUCache(int capacity) {
-        curSize = 0;
-        maxSize = capacity;
+        this.size = 0;
+        this.capacity = capacity;
         head = new Node();
         tail = new Node();
         head.next = tail;
@@ -48,6 +48,7 @@ public class LRUCache<K, V> {
         lruCache = new HashMap<>();
     }
 
+    @Override
     public V get(K key) {
         Node node = lruCache.get(key);
         if (node == null) {
@@ -59,14 +60,15 @@ public class LRUCache<K, V> {
         }
         return node.val;
     }
-    
+
+    @Override
     public void put(K key, V value) {
         Node node = lruCache.get(key);
         if (node != null) {
             removeNode(node);
             lruCache.remove(key);
         }
-        if (curSize >= maxSize) {
+        if (size >= capacity) {
             lruCache.remove(head.next.key);
             removeNode(head.next);
         }
@@ -76,7 +78,7 @@ public class LRUCache<K, V> {
     }
 
     public static void main(String[] args) {
-        LRUCache<Integer, Integer> lruCache = new LRUCache<>(2);
+        ICache<Integer, Integer> lruCache = new LRUCache<>(2);
         lruCache.put(1, 1);
         lruCache.put(2, 2);
         lruCache.get(1);

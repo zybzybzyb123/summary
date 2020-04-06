@@ -3,7 +3,7 @@ package algorithm.dataStruct.interview;
 public class Trie {
 
     private class TrieNode {
-        Boolean isLeaf = false;
+        boolean isLeaf = false;
         public TrieNode[] nodes = new TrieNode[26];
     }
 
@@ -53,11 +53,3 @@ public class Trie {
         return true;
     }
 }
-
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie obj = new Trie();
- * obj.insert(word);
- * boolean param_2 = obj.search(word);
- * boolean param_3 = obj.startsWith(prefix);
- */
