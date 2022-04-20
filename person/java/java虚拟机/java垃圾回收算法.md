@@ -13,7 +13,7 @@
 
 ####应用可达算法
     GC Roots遍历
-        栈上的对象, 静态变量,常量
+        栈上的对象, 静态变量, 常量
 ####新生代
     复制算法
         eden区空间不够就触发min gc, eden + from_survivor + to_survivor

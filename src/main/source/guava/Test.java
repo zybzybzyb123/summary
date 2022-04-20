@@ -1,10 +1,8 @@
 package source.guava;
 
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.CompletableFuture;
+import com.google.common.collect.Lists;
 
-import static com.google.common.collect.Lists.newArrayList;
+import java.util.List;
 
 /**
  * @author zero
@@ -12,7 +10,7 @@ import static com.google.common.collect.Lists.newArrayList;
  */
 public class Test {
     public static void main(String[] args) throws Exception {
-        List<Integer> list = newArrayList();
-        System.out.println();
+        List<Integer> list = Lists.newArrayList(123);
+        System.out.println(list);
     }
 }

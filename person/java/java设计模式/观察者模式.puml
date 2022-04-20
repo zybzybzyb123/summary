@@ -23,5 +23,5 @@ class ConcreteObserver {
 
 Subject <|.. ConcreteSubject
 Observer <|.. ConcreteObserver
-'Observer <-- Subject
+Observer <-- Subject
 @enduml

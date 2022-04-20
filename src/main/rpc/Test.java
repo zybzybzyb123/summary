@@ -9,6 +9,7 @@ import java.util.concurrent.Future;
  * @created 2019/10/06
  * 异步调用接口
  */
+@SuppressWarnings("checkstyle:Indentation")
 public class Test {
     private static Random rand = new Random();
     private static long t = System.currentTimeMillis();
